@@ -86,17 +86,17 @@ for (const functionToTest of [sumArray, sumArrayReduce, sumArrayForOf, sumArrayF
   const timeNanoSeconds = histogram.min;
   const cycles = timeNanoSeconds * CPU_MAX_GHZ;
   const cyclesPerAdd = cycles / ARRAY_SIZE;
-  const addsPerCicle = 1 / cyclesPerAdd;
+  const addsPerCycle = 1 / cyclesPerAdd;
 
   const functionToTestName = functionToTest.name;
   console.log(`FunctionToTest: ${functionToTestName}`) ;
   console.log(`Time: ${timeNanoSeconds} nanoseconds`);
   console.log(`Cycles: ${cycles} cycles`);
   console.log(`Cycles/add: ${cyclesPerAdd}`);
-  console.log(`Adds/cycle: ${addsPerCicle}`);
+  console.log(`Adds/cycle: ${addsPerCycle}`);
   console.log(``);
 
-  benchmarkResults.push({ name: functionToTestName, timeNanoSeconds, cycles, cyclesPerAdd, addsPerCicle });
+  benchmarkResults.push({ name: functionToTestName, timeNanoSeconds, cycles, cyclesPerAdd, addsPerCicle: addsPerCycle });
 
 }
 

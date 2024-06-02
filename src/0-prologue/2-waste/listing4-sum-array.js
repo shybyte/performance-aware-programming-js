@@ -1,4 +1,3 @@
-import { log } from 'console';
 import { performance, createHistogram } from 'perf_hooks';
 
 // lscpu | grep MHz

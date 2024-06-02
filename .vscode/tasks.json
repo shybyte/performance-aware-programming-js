@@ -13,6 +13,15 @@
       "problemMatcher": []
     },
     {
+      "label": "run",
+      "type": "shell",
+      "command": "node ${file}",
+      "presentation": {
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
       "label": "clean turbo results",
       "type": "shell",
       "command": "rm turbo-*.cfg turbo-*.json",
@@ -20,6 +29,15 @@
         "clear": true
       },
       "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "tsc",
+      "problemMatcher": [
+        "$tsc"
+      ],
+      "label": "npm: tsc",
+      "detail": "tsc"
     }
   ]
 }

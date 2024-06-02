@@ -3,7 +3,7 @@ import { performance, createHistogram } from 'perf_hooks';
 // lscpu | grep MHz
 const CPU_MAX_GHZ = 3.6
 
-const ARRAY_SIZE = 4096;
+const ARRAY_SIZE = 4096; // 0x1000
 const TRY_COUNT = 100_000;
 
 const EXPECTED_RESULT = 8386560;
@@ -68,7 +68,7 @@ function measureSpeed(expectedResult, callback) {
     const start = performance.now();
     const result = callback();
     if(expectedResult != undefined && expectedResult != result) {
-      throw new Error(`Invalid result ${result} instead of expected result ${expectedResult}`)
+    throw new Error(`Invalid result ${result} instead of expected result ${expectedResult}`)
     }
     const duration = performance.now() - start;
     histogram.record(Math.floor(duration * 1_000_000)); //nano seconds
@@ -79,7 +79,9 @@ function measureSpeed(expectedResult, callback) {
 
 const benchmarkResults = [];
 
-for (const functionToTest of [sumArray, sumArrayReduce, sumArrayForOf, sumArrayForEach]) {
+const functionsToTest = [sumArray, sumArrayReduce, sumArrayForOf, sumArrayForEach];
+
+for (const functionToTest of functionsToTest) {
   const histogram = measureSpeed(EXPECTED_RESULT, () => functionToTest(array));
 
   const timeNanoSeconds = histogram.min;

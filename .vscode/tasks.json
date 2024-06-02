@@ -1,0 +1,25 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "trace turbo",
+      "type": "shell",
+      "command": "node --allow-natives-syntax --trace-turbo --no-turbo-inlining ${file}",
+      "presentation": {
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "clean turbo results",
+      "type": "shell",
+      "command": "rm turbo-*.cfg turbo-*.json",
+      "presentation": {
+        "clear": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}

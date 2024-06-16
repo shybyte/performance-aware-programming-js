@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      node-zigar:
+        specifier: ^0.13.0
+        version: 0.13.0
     devDependencies:
       '@types/node':
         specifier: ^20.13.0
@@ -20,6 +24,16 @@ packages:
   '@types/node@20.13.0':
     resolution: {integrity: sha512-FM6AOb3khNkNIXPnHFDYaHerSv8uN22C91z098AnGccVu+Pcdhi+pNUFDi0iLmPIsVE0JBD0KVS7mzUYt4nRzQ==}
 
+  node-api-headers@1.1.0:
+    resolution: {integrity: sha512-ucQW+SbYCUPfprvmzBsnjT034IGRB2XK8rRc78BgjNKhTdFKgAwAmgW704bKIBmcYW48it0Gkjpkd39Azrwquw==}
+
+  node-zigar-addon@0.13.0:
+    resolution: {integrity: sha512-utPJhbdEZhccsT/vD7ZGgdCkVXLN0nNjrK24JCOi70c15le9gzvPmoijRFm3g58BneCUtwSse1CoQKNvObr8Sw==}
+
+  node-zigar@0.13.0:
+    resolution: {integrity: sha512-NYA16LA25dmRLZCIpDQ/9s5/SeJ8bgPY+TtR9RGp4Eb7+biNWyDJtwY8SWvvuzpTx8jLsK6y3I+t3DPvUFEkug==}
+    hasBin: true
+
   typescript@5.4.5:
     resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
     engines: {node: '>=14.17'}
@@ -28,12 +42,28 @@ packages:
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
 
+  zigar-compiler@0.13.0:
+    resolution: {integrity: sha512-pB2WdGxXhbF7osVwg5Hc3LAsTbDfVoceWAlc3Pa5cjFyEeEiOIwc1IgG++MpB1tSsjlHrUDayz3AjpeNO3QCkg==}
+
 snapshots:
 
   '@types/node@20.13.0':
     dependencies:
       undici-types: 5.26.5
 
+  node-api-headers@1.1.0: {}
+
+  node-zigar-addon@0.13.0:
+    dependencies:
+      node-api-headers: 1.1.0
+
+  node-zigar@0.13.0:
+    dependencies:
+      node-zigar-addon: 0.13.0
+      zigar-compiler: 0.13.0
+
   typescript@5.4.5: {}
 
   undici-types@5.26.5: {}
+
+  zigar-compiler@0.13.0: {}

@@ -22,6 +22,15 @@
       "problemMatcher": []
     },
     {
+      "label": "run with zigar",
+      "type": "shell",
+      "command": "node --loader=node-zigar --no-warnings  ${file}",
+      "presentation": {
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
       "label": "clean turbo results",
       "type": "shell",
       "command": "rm turbo-*.cfg turbo-*.json",

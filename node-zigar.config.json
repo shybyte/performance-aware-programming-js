@@ -1,0 +1,12 @@
+{
+  "optimize": "ReleaseFast",
+  "sourceFiles": {
+    "src/0-prologue/7-ffi/lib/sum_array.zigar": "src/0-prologue/7-ffi/zig/sum_array.zig"
+  },
+  "targets": [
+    {
+      "platform": "linux",
+      "arch": "x64"
+    }
+  ]
+}

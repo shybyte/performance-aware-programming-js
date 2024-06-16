@@ -1,3 +1,4 @@
 turbo-*.cfg
 turbo-*.json
 node_modules
+.zigar-cache
